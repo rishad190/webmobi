@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Grid } from "@mui/material";
+import { styled } from "@mui/system";
+import "./App.css";
+import LeftContainer from "./Components/LeftContainer";
+import MidContainer from "./Components/MidContainer";
+import RightContainer from "./Components/RightContainer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Grid container>
+        <Grid xl={1}>
+          <LeftContainer />
+        </Grid>
+        <Grid xl={10}>
+          <MidContainer />
+        </Grid>
+        <Grid xl={1}>
+          <RightContainer />
+        </Grid>
+      </Grid>
+    </Wrapper>
   );
 }
 
 export default App;
+const Wrapper = styled("div")`
+  height: 100vh;
+  background-color: lightgray;
+`;
